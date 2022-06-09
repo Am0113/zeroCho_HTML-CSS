@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>끝말잇기</title>
+</head>
+<body>
+  <div><span id="order">1</span>번째 참가자</div>
+  <div>제시어: <span id="word"></span></div>
+  <input type="text">
+  <button>입력</button>
+  <script> 
+  
+    const number = Number(prompt('몇 명이 참가하나요?'));
+    const $button = document.querySelector('button');
+    const $input = document.querySelector('input');
+    const $word = document.querySelector('#word');
+    
+    let = word;
+    let = Hello;
+
+    const onClickButton = () => {
+    if(!word){
+      word = Hello;
+      $word.textContent = word;
+    } else{
+
+    }
+  };
+    const onInput = (event) => {
+      Hello = event.target.value;
+    };
+
+    $button.addEventListener('click', onClickButton);
+    $input.addEventListener('input', onInput);
+  </script>
+</body>
+</html>
+
+
+/*이 밑에는 선택자관련사항인데 사실 선택자는 CSS와 더 관련이 있다고 한다. @CSS에서 공부하기@ 
+  const $span = document.querySelector('div span') div 다음에 공백이 따라오면 자손까지 포함 
+                                      ('div>span') div안에 >를 넣어주면 자식 태그까지만 불러올 수 있다.
+                                      선택할게 길어질 바에는 아이디를 하나 주는 것이 낫다.*/
+                                      //id(#)를 줄 때는 고유의 값일 때, 2개 이상일 때는 클래스(.)를 사용하자
