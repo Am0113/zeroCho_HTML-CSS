@@ -41,25 +41,25 @@
     </div>
     
     <script>
-      let numOne = '';
+      let numOne = '';                                    // 값을 저장할 변수를 선언
       let operator = '';
       let numTwo = '';
-      const $operator = document.querySelector('#operator');
+      const $operator = document.querySelector('#operator');//를 통해 문서에서 아이디에 접근하는 변수
       const $result = document.querySelector('#result');
-      const onClickNumber = (number) => () => {
-        if (!operator) { //비어있지 않다.
-          numOne += number;
-          $result.value += number;
+      const onClickNumber = (number) => () => {        //number라는 함수를 만들어서 이 함수를 클릭할 때 
+        if (!operator) {                            //operator가 비어있지 않다.
+          numOne += number;                         //numOne에다가 One과 Two를 더한 값을 넣어라
+          $result.value += number;                 //보이는 화면에서도 바꿔주기
           return;
-        }  //비어있다.
-        if(!numTwo) {
-          $result.value = '';
-        }
-        numTwo += number; 
-        $result.value += number;
+        }                                         //operator가 비어있다.
+        if(!numTwo) {                             // numTwo가 아니라면 
+          $result.value = '';                     //결과값을 비워라
+        }                                         //numTwo가 맞다면 
+        numTwo += number;                       //numTwo의 자리에 numTwo + number를 해서 대입해라
+        $result.value += number;                //보이는 화면에서도 바꿔주기
       
       }; 
-      document.querySelector('#num-0').addEventListener('click', onClickNumber('0')); 
+      document.querySelector('#num-0').addEventListener('click', onClickNumber('0')); //HTML문서에 있는 텍스트들을 실제 숫자로 바꿔주기
       document.querySelector('#num-1').addEventListener('click', onClickNumber('1')); 
       document.querySelector('#num-2').addEventListener('click', onClickNumber('2')); 
       document.querySelector('#num-3').addEventListener('click', onClickNumber('3')); 
@@ -70,21 +70,22 @@
       document.querySelector('#num-8').addEventListener('click', onClickNumber('8')); 
       document.querySelector('#num-9').addEventListener('click', onClickNumber('9')); 
 
-      const onClickOperator = (op) => () => {
-        if(numOne) {
-          operator = op;
-          $operator.value = op;
-        } else {
-          alert('숫자를 먼저 입력하세요.');
+      const onClickOperator = (op) => () => {  //operator를 클릭할 때
+        if(numOne) {                           //만약 numOne이 있다면 
+          operator = op;                       //계산을 해주고
+          $operator.value = op;                //화면에도 출력
+        } else {                               //아니라면
+          alert('숫자를 먼저 입력하세요.');         //경고창을 띄운다
         };
       };
-      document.querySelector('#plus').addEventListener('click', onClickOperator('+'));
+      document.querySelector('#plus').addEventListener('click', onClickOperator('+'));  //HTML문서에서 연산자들이 실제 연산할 수 있게 만들어줌
       document.querySelector('#minus').addEventListener('click', onClickOperator('-'));
       document.querySelector('#divide').addEventListener('click', onClickOperator('/'));
       document.querySelector('#multiply').addEventListener('click', onClickOperator('*'));
       document.querySelector('#calculate').addEventListener('click', () => {
-        if(numTwo) {
+        if(numTwo) {              //Calculate를 하는 과정에서 numTwo가 operator을 만날 때 각 case에 따라 맞게 실행이 된다.
           switch(operator) {
+
             case '+':
               $result.value = parseInt(numOne) + parseInt(numTwo);
               break;
@@ -100,12 +101,17 @@
               default:
               break;
           } 
+          $operator.value = '';                        //=을 누르면 연산결과를 화면에서 지운다.
+          numOne = $result.value;                     // 화면에서 numOne자리에 결과값을 보여준다.
+          operator = '';                              //operator 자리는 비워준다.
+          numTwo = '';                               // numTwo 자리도 지워준다.
         } else {
           alert('숫자를 먼저 입력하세요.');
+
         }
       });
-      document.querySelector('#clear').addEventListener('click', () => {
-        numOne = '';
+      document.querySelector('#clear').addEventListener('click', () => {          //HTML에서 clear를 클릭하면
+        numOne = '';                                                             //밑에 줄을 실행하며 깔끔하게 clear
         operator = '';
         numTwo = '';
         $operator.value = '';

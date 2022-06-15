@@ -4,59 +4,72 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./naver.css">
 
   <title>네이버</title>
   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1"/>
 </head>
 <body>
-  <h1> <!-- 주석 comment-->
-    <a href="https://www.naver.com">네이버</a> <!--속성 attribute-->
-  </h1>
-  <h2>검색창</h2>
-  <fieldset>
-    <legend>
-      검색
-    </legend>
-    <!-- input에 type은 Checkbox == 체크박스, radio == 다중 1택 -->
-    <!-- radio는 name을 group으로 묶어주어야 다중 1택 됨 -->
-    <input type="text">
-    <input type="checkbox">
-    <input type="checkbox">
-    <input type="radio" name="group">
-    <input type="radio" name="group">
-    <button>검색</button>
-  </fieldset>
-  <ul> <!--unorder list-->
-    <li>메일</li> <!--list item-->
-    <li>카페</li>
-    <li>블로그</li>
-    <li>지식인</li>
-    <li>쇼핑</li>
-    <li>네이버페이</li>
-  </ul>
-  <h2>실시간 검색어</h2>
-  <h3>연합뉴스</h3>
-    <or>
-      <li>충격) 이하은이 지금 내 칼과 가위로 나를 죽이려고 위협하고 있다.</li>
-      <li>속보) 곧 있으면 향암이형님께서 벌크업을 하려고 운동을 하러 가신다.</li>
-      <li>중대발표: 이향암 개잘생겼다.</li>
-    </or>
-  <h3>언론사 목록</h3>
-  <ul>
-    <li><img src="./한국일보.png" alt="한국일보"></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-  <h3>로그인</h3>
-  <h3>뉴스</h3>
-  <h3>법률</h3>
-  <h3>쇼핑</h3>
-  </body>
+  <header>
+      <div id="header-center">
+        <h1> <!-- 주석 comment-->
+          <a href="https://www.naver.com">네이버</a> <!--속성 attribute-->
+        </h1>
+        <h2>검색창</h2>
+        <fieldset>
+          <legend>
+            검색
+          </legend>
+          <!-- input에 type은 Checkbox == 체크박스, radio == 다중 1택 -->
+          <!-- radio는 name을 group으로 묶어주어야 다중 1택 됨 -->
+          <input type="text">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="radio" name="group">
+          <input type="radio" name="group">
+          <button>검색</button>
+        </fieldset>
+      </div>
+  </header>
+  <nav>
+    <div>
+      <ul> <!--unorder list-->
+        <li>메일</li> <!--list item-->
+        <li>카페</li>
+        <li>블로그</li>
+        <li>지식인</li>
+        <li>쇼핑</li>
+        <li>네이버페이</li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div>
+      <h2>실시간 검색어</h2>
+      <h3>연합뉴스</h3>
+        <or>
+          <li>충격) 내가 로또 1등 당첨됐다.</li>
+          <li>속보) 그 돈으로 집도 사고 차도 샀다.</li>
+          <li>중대발표: 큰 거짓말이였다.</li>
+        </or>
+      <h3>언론사 목록</h3>
+      <ul>
+        <li><img src="./한국일보.png" alt="한국일보"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <h3>로그인</h3>
+      <h3>뉴스</h3>
+      <h3>법률</h3>
+      <h3>쇼핑</h3>
+    </div>
+  </main>
+</body>
 </html>
